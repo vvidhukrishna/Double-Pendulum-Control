@@ -9,15 +9,16 @@ pin_length = 0.15;
 pin_radius = 0.1;
 
 % Mass Properties (g/cm^3)
-pin_density = 4.6;
-density1 = 2.7;
-density2 = 7.7;
+pin_density = 0.0;
+
+density1 = 2700; % Aluminum in kg/m^3
+density2 = 7700; % Steel/Iron in kg/m^3
 
 rod1_mass = density1*(pi*rod1_radius^2*rod1_length);
 rod2_mass = density2*(pi*rod2_radius^2*rod2_length);
 
-rod1_Innertia = 0.25 * rod1_mass * (rod1_radius^2) + (1/3) * rod1_mass * (rod1_length^2);
-rod2_Innertia = 0.25 * rod2_mass * (rod2_radius^2) + (1/3) * rod2_mass * (rod2_length^2);
+rod1_Innertia = 0.25 * rod1_mass * (rod1_radius^2) + (1/12) * rod1_mass * (rod1_length^2);
+rod2_Innertia = 0.25 * rod2_mass * (rod2_radius^2) + (1/12) * rod2_mass * (rod2_length^2);
 
 % Initial Conditions (degrees)
 pin1_angle = -35;
